@@ -1,2 +1,79 @@
-<p>meteo-previsioni works!</p>
+<h2>Ricerca su meteo attuale</h2>
 <app-meteo-attuale></app-meteo-attuale>
+
+<!--*****************************************************-->
+<br />
+<hr />
+<br />
+<div class="serch-city">
+  <h2>Ricerca su meteo previsioni (Tutte le risposte)</h2>
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search City"
+      aria-label="Example text with button addon"
+      aria-describedby="button-addon1"
+      [(ngModel)]="searchQuery"
+    />
+    <button
+      class="btn btn-outline-secondary"
+      type="button"
+      id="button-addon1"
+      (click)="searchTempHourlyByCity()"
+    >
+      Cerca
+    </button>
+  </div>
+</div>
+
+<div *ngIf="cityDataHourly">
+  <ul *ngFor="let hourlyWeathe of cityDataHourly.list; index as i">
+    <li>Data: {{ hourlyWeathe.dt_txt }}</li>
+    <li>Temperatura: {{ hourlyWeathe.main.temp }} °C</li>
+    <li>
+      City weather icon:
+      <img
+        src="https://openweathermap.org/img/wn/{{
+          hourlyWeathe.weather[0].icon
+        }}@2x.png"
+        alt="icon"
+      />
+    </li>
+  </ul>
+</div>
+
+<!--*****************************************************-->
+<br />
+<hr />
+<br />
+<div class="serch-city">
+  <h2>Ricerca su meteo previsioni (Le risposte Mappate)</h2>
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search City"
+      aria-label="Example text with button addon"
+      aria-describedby="button-addon1"
+      [(ngModel)]="searchQuery"
+    />
+    <button
+      class="btn btn-outline-secondary"
+      type="button"
+      id="button-addon1"
+      (click)="searchTempHourlyByCityRefactor()"
+    >
+      Cerca
+    </button>
+  </div>
+</div>
+
+<div *ngIf="refactorCityDataHourly">
+  <ul *ngFor="let hourlyWeatherMap of refactorCityDataHourly; index as i">
+    <li>
+      Data: {{ hourlyWeatherMap.dt_txt }}. Temperatura
+      {{ hourlyWeatherMap.main.temp }} °C
+    </li>
+  </ul>
+</div>
