@@ -1,0 +1,43 @@
+
+<div class="text-center">
+  <a
+    *ngIf="!statusChanged"
+    class="btn btn-primary mb-3 mt-3"
+    role="button"
+    (click)="onLogin()"
+    >Login</a
+  >
+  <br />
+  <a
+    *ngIf="statusChanged"
+    class="btn btn-primary mb-3"
+    role="button"
+    (click)="onLogout()"
+    >Logout</a
+  >
+</div>
+
+
+<div class="mb-3" *ngIf="!statusChanged">
+  <label for="" class="form-label">Username</label>
+  <input [(ngModel)]="userUsername" type="text" class="form-control" />
+</div>
+
+<div class="mb-3" *ngIf="!statusChanged">
+  <label for="" class="form-label">Password</label>
+  <input [(ngModel)]="userPassword" type="text" class="form-control" />
+</div>
+
+<div>
+  <div *ngIf="user; else noLogged">Benvenuto, sei loggato come: <h2>{{ user }}</h2> </div>
+  <ng-template #noLogged>
+    <h2>Gentile Utente, non sei loggato, pero puoi usare la ricerca gratis.</h2>
+  </ng-template>
+  <h2 *ngIf="!checkPassword">Password errato</h2>
+</div>
+
+
+
+<app-meteo-attuale></app-meteo-attuale>
+
+

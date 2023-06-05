@@ -1,0 +1,37 @@
+
+<div class="serch-city">
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder=""
+      aria-label="Example text with button addon"
+      aria-describedby="button-addon1"
+      [(ngModel)]="searchQuery"
+    />
+    <button
+      class="btn btn-outline-secondary"
+      type="button"
+      id="button-addon1"
+      (click)="searchTempByCity()"
+    >
+      Cerca
+    </button>
+  </div>
+</div>
+
+<div *ngIf="cityData">
+
+  <h2></h2>
+  <ul>
+    <li>City name: <span>{{ cityData.name }}</span> </li>
+    <li>City code: <span>{{ cityData.cod }}</span> </li>
+    <li>City weather: <span>{{ cityData.weather[0].main }}</span> </li>
+    <li>City weather description: <span>{{ cityData.weather[0].description }}</span> </li>
+    <li>City temperature now: <span>{{ cityData.main.temp }} Celsius </span> </li>
+    <li>City temperature feels like: <span>{{ cityData.main.feels_like }} Celsius </span> </li>
+    <li>City temperature pressure: <span>{{ cityData.main.pressure }} Bar</span> </li>
+
+  </ul>
+</div>
+
