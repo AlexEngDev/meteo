@@ -12,7 +12,7 @@ export class MeteoService {
 
  //private apiBaseUrl = "https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}"
  private apiBaseUrl = "https://api.openweathermap.org/data/2.5/weather?q="
- private apiKey = "{API key}"
+ private apiKey = "{apiKey}"
 /*
  private options = {
 	headers: new HttpHeaders({
@@ -28,7 +28,7 @@ export class MeteoService {
 	}
 
 
-  get
+
 
 
 }

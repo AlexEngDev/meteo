@@ -1,10 +1,9 @@
-
 <div class="serch-city">
   <div class="input-group mb-3">
     <input
       type="text"
       class="form-control"
-      placeholder=""
+      placeholder="Search City"
       aria-label="Example text with button addon"
       aria-describedby="button-addon1"
       [(ngModel)]="searchQuery"
@@ -21,17 +20,61 @@
 </div>
 
 <div *ngIf="cityData">
-
   <h2></h2>
   <ul>
-    <li>City name: <span>{{ cityData.name }}</span> </li>
-    <li>City code: <span>{{ cityData.cod }}</span> </li>
-    <li>City weather: <span>{{ cityData.weather[0].main }}</span> </li>
-    <li>City weather description: <span>{{ cityData.weather[0].description }}</span> </li>
-    <li>City temperature now: <span>{{ cityData.main.temp }} Celsius </span> </li>
-    <li>City temperature feels like: <span>{{ cityData.main.feels_like }} Celsius </span> </li>
-    <li>City temperature pressure: <span>{{ cityData.main.pressure }} Bar</span> </li>
-
+    <li>
+      City name:
+      <span class="badge rounded-pill bg-info text-dark">{{
+        cityData.name
+      }}</span>
+    </li>
+    <li>
+      City code:
+      <span class="badge rounded-pill bg-info text-dark">{{
+        cityData.cod
+      }}</span>
+    </li>
+    <li>
+      City weather:
+      <span class="badge rounded-pill bg-info text-dark">{{
+        cityData.weather[0].main
+      }}</span>
+    </li>
+    <li>
+      City weather description:
+      <span class="badge rounded-pill bg-info text-dark">{{
+        cityData.weather[0].description
+      }}</span>
+    </li>
+    <li>
+      City temperature now:
+      <span class="badge rounded-pill bg-info text-dark"
+        >{{ cityData.main.temp }} Celsius
+      </span>
+    </li>
+    <li>
+      City temperature feels like:
+      <span class="badge rounded-pill bg-info text-dark"
+        >{{ cityData.main.feels_like }} Celsius
+      </span>
+    </li>
+    <li>
+      City temperature pressure:
+      <span class="badge rounded-pill bg-info text-dark"
+        >{{ cityData.main.pressure }} mBar</span
+      >
+    </li>
+    <li>
+      City weather icon:
+      <span class="badge rounded-pill bg-info text-dark">{{
+        cityData.weather[0].icon
+      }}</span>
+      <img
+        src="https://openweathermap.org/img/wn/{{
+          cityData.weather[0].icon
+        }}@2x.png"
+        alt="icon"
+      />
+    </li>
   </ul>
 </div>
-
