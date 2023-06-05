@@ -16,7 +16,7 @@ export class MeteoService {
  //private apiUrlWeatherHourly = "api.openweathermap.org/data/2.5/forecast?q=Milan&appid=85124bf88ee3f736704131367529ca62"
  private apiBaseUrl = "https://api.openweathermap.org/data/2.5/weather?q="
  private apiUrlWeatherHourly = "https://api.openweathermap.org/data/2.5/forecast?q="
- private apiKey = "85124bf88ee3f736704131367529ca62"
+ private apiKey = "apiKey"
 /*
  private options = {
 	headers: new HttpHeaders({
